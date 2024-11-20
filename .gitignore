@@ -24,3 +24,7 @@ hs_err_pid*
 replay_pid*
 
 .idea
+A1/.gradle
+A1/build
+A2/.gradle
+A2/build
