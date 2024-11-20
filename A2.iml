@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.path="$MODULE_DIR$/A2" external.root.project.path="$MODULE_DIR$/A2" external.system.id="GRADLE" type="JAVA_MODULE" version="4">
+<module external.linked.project.id="A2" external.linked.project.path="$MODULE_DIR$/A2" external.root.project.path="$MODULE_DIR$/A2" external.system.id="GRADLE" external.system.module.group="de.uulm" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$/A2" />
+    <content url="file://$MODULE_DIR$/A2">
+      <sourceFolder url="file://$MODULE_DIR$/A2" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/A2/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/A2/build" />
+    </content>
+    <orderEntry type="jdk" jdkName="openjdk-23" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
