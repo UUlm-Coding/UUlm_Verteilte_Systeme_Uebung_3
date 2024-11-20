@@ -3,8 +3,6 @@ package de.uulm;
 import de.uulm.interfaces.IRemoteKVStore;
 
 import java.rmi.RemoteException;
-import java.rmi.registry.LocateRegistry;
-import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.HashMap;
 
@@ -12,13 +10,11 @@ public class RMIKVStore extends UnicastRemoteObject implements IRemoteKVStore {
 
     HashMap<String, String> store;
 
-    public RMIKVStore() throws RemoteException {
+    protected RMIKVStore() throws RemoteException {
         super();
-        Registry registry = LocateRegistry.createRegistry(1099);
-
-        registry.rebind("RemoteKVStore", this);
         store = new HashMap<>();
     }
+
 
     @Override
     public String readRemote(String key) throws RemoteException {

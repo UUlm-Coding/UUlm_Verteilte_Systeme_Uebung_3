@@ -13,8 +13,7 @@ public class RMIClient {
             Registry registry = LocateRegistry.getRegistry(host, port);
             kvStore = (IRemoteKVStore) registry.lookup("RemoteKVStore");
         } catch (Exception e) {
-            System.err.println("Client exception: " + e.toString());
-            e.printStackTrace();
+            System.err.println("Client exception: " + e);
         }
     }
 
@@ -23,7 +22,7 @@ public class RMIClient {
             kvStore.writeRemote(key, value);
             System.out.println("Written: " + key + " -> " + value);
         } catch (Exception e) {
-            System.err.println("Write exception: " + e.getMessage());
+            System.err.println("Write exception: " + e);
         }
     }
 
@@ -31,7 +30,7 @@ public class RMIClient {
         try {
             return kvStore.readRemote(key);
         } catch (Exception e) {
-            System.err.println("Read exception: " + e.getMessage());
+            System.err.println("Read exception: " + e);
             return null;
         }
     }

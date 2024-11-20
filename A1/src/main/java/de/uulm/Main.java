@@ -1,13 +1,17 @@
 package de.uulm;
 
 import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 
 public class Main {
     public static void main(String[] args) {
         RMIKVStore rmikvStore;
         try {
+            Registry registry = LocateRegistry.createRegistry(1099);
             rmikvStore = new RMIKVStore();
+            registry.rebind("RemoteKVStore", rmikvStore);
         } catch (RemoteException e) {
             throw new RuntimeException(e);
         }
@@ -34,7 +38,7 @@ public class Main {
             UnicastRemoteObject.unexportObject(rmikvStore, true);
             System.out.println("RMI Server stopped.");
         } catch (RemoteException e) {
-            e.printStackTrace();
+            System.err.println("Error stopping RMI Server: " + e);
         }
     }
 }
