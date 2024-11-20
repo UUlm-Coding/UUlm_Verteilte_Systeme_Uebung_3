@@ -13,8 +13,7 @@ public class RMIClient {
             Registry registry = LocateRegistry.getRegistry(host, port);
             kvStore = (IRemoteKVStore) registry.lookup("RemoteKVStore");
         } catch (Exception e) {
-            System.err.println("Client exception: " + e.toString());
-            e.printStackTrace();
+            System.err.println("Client exception: " + e);
         }
     }
 
