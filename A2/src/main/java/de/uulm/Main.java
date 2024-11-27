@@ -45,6 +45,8 @@ public class Main {
 
         try {
             UnicastRemoteObject.unexportObject(subRMIKVStore, true);
+            UnicastRemoteObject.unexportObject(client1, true);
+            UnicastRemoteObject.unexportObject(client2, true);
         } catch (Exception e) {
             System.err.println("Failed to unbind SubRMIKVStore");
         }
